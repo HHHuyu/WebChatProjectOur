@@ -31,6 +31,8 @@ function weightedPick(list) {
 class Game {
   constructor() {
     this.phase = 'select'; // select | playing | over
+    this.autoGrow = false; // 自动成长开关
+    this.choiceDeadline = 0; // 选择事件倒计时截止时间戳
   }
 
   // 选择朝代并开始
@@ -45,6 +47,8 @@ class Game {
     this.log = [];
     this.phase = 'playing';
     this.pendingEvent = null;
+    this.autoGrow = false;
+    this.choiceDeadline = 0;
     // 人生状态标签：随经历动态变化，用于驱动故事线（阶层/身份）
     this.flags = {};
     // 婚姻状态：married 是否成婚；spouseAlive 配偶是否在世；concubines 妾数
