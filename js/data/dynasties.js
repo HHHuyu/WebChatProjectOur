@@ -1,5 +1,7 @@
 // 朝代配置
 // 每个朝代定义：名称、寿命基准、随机事件权重修正、特有事件标签
+// polygamy: 是否允许男子妻妾（古代 true / 现代 false）
+// femaleRestrict: 女性是否在仕途/科举/从军上受限制
 const DYNASTIES = [
   {
     id: 'tang',
@@ -9,6 +11,8 @@ const DYNASTIES = [
     wealthMod: 1.1,
     healthMod: 1.0,
     tags: ['prosperity', 'poetry'],
+    polygamy: true,
+    femaleRestrict: true,
   },
   {
     id: 'song',
@@ -18,6 +22,8 @@ const DYNASTIES = [
     wealthMod: 1.15,
     healthMod: 0.95,
     tags: ['civil', 'commerce'],
+    polygamy: true,
+    femaleRestrict: true,
   },
   {
     id: 'ming',
@@ -27,6 +33,8 @@ const DYNASTIES = [
     wealthMod: 1.0,
     healthMod: 0.95,
     tags: ['isolation', 'court'],
+    polygamy: true,
+    femaleRestrict: true,
   },
   {
     id: 'qing',
@@ -36,6 +44,8 @@ const DYNASTIES = [
     wealthMod: 0.9,
     healthMod: 0.85,
     tags: ['turmoil', 'poverty'],
+    polygamy: true,
+    femaleRestrict: true,
   },
   {
     id: 'modern',
@@ -45,6 +55,8 @@ const DYNASTIES = [
     wealthMod: 1.2,
     healthMod: 1.25,
     tags: ['tech', 'freedom'],
+    polygamy: false,
+    femaleRestrict: false,
   },
 ];
 

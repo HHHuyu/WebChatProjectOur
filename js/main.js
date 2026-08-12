@@ -65,9 +65,14 @@ function renderPlaying(W, H) {
   ctx.textAlign = 'left';
   ctx.textBaseline = 'middle';
   ctx.font = 'bold 18px sans-serif';
-  ctx.fillText(`${game.name}  ${game.age}岁`, 16, 24);
+  ctx.fillText(`${game.name}（${game.gender === 'male' ? '男' : '女'}）  ${game.age}岁`, 16, 24);
   ctx.font = '12px sans-serif';
-  ctx.fillText(`${game.dynasty.name} · ${game.family.name}`, 16, 50);
+  const marryState = game.flags.married
+    ? game.flags.spouseAlive
+      ? (game.gender === 'male' && game.flags.concubines > 0 ? `妻${game.flags.concubines + 1}人` : '已婚')
+      : '丧偶'
+    : '未婚';
+  ctx.fillText(`${game.dynasty.name} · ${game.family.name} · ${marryState}`, 16, 50);
 
   // 属性条
   const stats = ['health', 'intelligence', 'wealth', 'happiness'];
